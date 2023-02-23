@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Emploi } from '../core/model/Emploi';
+import { Emploi } from '../core/model/emploi';
+import { CalculService } from '../services/calcul.service';
 
 @Component({
   selector: 'app-offres-emploi',
@@ -8,10 +9,11 @@ import { Emploi } from '../core/model/Emploi';
 })
 export class OffresEmploiComponent implements OnInit {
 
+  offf!:number;
   nbre! : number;
   filter! : string;
   listOffresEmploi! : Emploi[];
-  constructor() { }
+  constructor(private calcul:CalculService) { }
 
   ngOnInit(): void {
     this.listOffresEmploi = [
@@ -19,6 +21,8 @@ export class OffresEmploiComponent implements OnInit {
     {reference: "ref002", titre: "web", entreprise: "tekup", etat: false},
     {reference: "ref003", titre: "bi", entreprise: "sesame", etat: false},
     ] 
+    this.offf=this.calcul.getNumberOf(this.listOffresEmploi,'etat',false);
+
   }
 
   Bilan(){

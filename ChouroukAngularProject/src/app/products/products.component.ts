@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../core/model/Product';
+import { CalculService } from '../services/calcul.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -9,11 +10,14 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductsComponent implements OnInit {
 
+  alertstock!:number;
   listProduct! : Product[];
-  constructor( private productservice:ProductService) { }
+  constructor( private productservice:ProductService,private calcul:CalculService) { }
 
   ngOnInit(): void {
   this.listProduct=this.productservice.listProduct;
+  this.alertstock = this.calcul.getNumberOf(this.listProduct,'quantity',0);
+  
   }
 
   buy(p : number){
@@ -25,5 +29,8 @@ export class ProductsComponent implements OnInit {
   }
 
   
+  }
 
-}
+  
+
+
