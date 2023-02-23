@@ -12,4 +12,9 @@ export class ProductService {
     ] 
 
   constructor() { }
+
+  addProduct(product:Product){
+    this.listProduct.push(product);
+  }
+
 }

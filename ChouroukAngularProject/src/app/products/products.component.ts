@@ -24,4 +24,6 @@ export class ProductsComponent implements OnInit {
     this.listProduct[p].like++;
   }
 
+  
+
 }
