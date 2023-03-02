@@ -11,6 +11,7 @@ import { ProductsComponent } from './products/products.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     NavBarComponent,
     TemplateDrivenFormComponent,
     AddproductComponent,
+    ProductItemComponent,
   ],
   imports: [
     BrowserModule,

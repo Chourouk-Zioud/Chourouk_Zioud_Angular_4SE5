@@ -20,12 +20,14 @@ export class ProductsComponent implements OnInit {
   
   }
 
-  buy(p : number){
-    this.listProduct[p].quantity--;
+  buy(product : Product){
+    let i=this.listProduct.indexOf(product)
+    this.listProduct[i].quantity--;
   }
 
-  like(p:number){
-    this.listProduct[p].like++;
+  like(product:Product){
+    let i=this.listProduct.indexOf(product)
+    this.listProduct[i].like++;
   }
 
   
